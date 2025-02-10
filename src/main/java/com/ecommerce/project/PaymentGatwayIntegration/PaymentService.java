@@ -46,10 +46,10 @@ public class PaymentService {
     }
     //===========================================================================================================
 
-    public String createOrder(double amount) throws Exception {
+    public String createOrder(OrderRequest orderRequest) throws Exception {
         JSONObject optionspay = new JSONObject();
-        optionspay.put("amount", (int) (amount * 100)); // Convert to paise
-        optionspay.put("currency", "INR");
+        optionspay.put("amount", (int) (orderRequest.getAmount() * 100)); // Convert to paise
+        optionspay.put("currency", orderRequest.getCurrency());
         optionspay.put("receipt", "order_rcpt_" + System.currentTimeMillis());
 
         Order order = razorpayClient.orders.create(optionspay);

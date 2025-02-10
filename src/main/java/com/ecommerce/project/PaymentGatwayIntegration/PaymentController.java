@@ -14,7 +14,7 @@ public class PaymentController {
 
     @PostMapping("/order")
     public ResponseEntity<String> createOrder(@RequestBody OrderRequest orderRequest) throws Exception {
-        String orderId = paymentService.createOrder(orderRequest.getAmount());
+        String orderId = paymentService.createOrder(orderRequest);
         return ResponseEntity.ok(orderId);
     }
 
