@@ -96,7 +96,7 @@ public class CartServiceImpl implements CartService {
 
 
     //updating quantity after adding to cart create a controller for this donot forget
-    @Override
+
     public CartDTO updateCartItemQuantity(Long productId, Integer newQuantity) {
         Cart cart = createCart();
 
@@ -127,7 +127,7 @@ public class CartServiceImpl implements CartService {
         return getCartDetails();
     }
 
-    @Override
+
     public CartDTO getCartDetails() {
         Cart cart = createCart();
 
